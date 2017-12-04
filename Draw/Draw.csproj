@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArcShape.cs" />
+    <Compile Include="ArcTool.cs" />
     <Compile Include="BaseShape.cs" />
     <Compile Include="BaseTool.cs" />
     <Compile Include="CircleShape.cs" />

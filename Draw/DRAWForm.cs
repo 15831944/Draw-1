@@ -270,6 +270,10 @@ namespace Draw
 						int hh = Math.Abs(((BaseShape)currentShapes[i]).getP1().Y - ((BaseShape)currentShapes[i]).getP2().Y);
 						g.DrawRectangle(new Pen(((BaseShape)currentShapes[i]).penColor,((BaseShape)currentShapes[i]).penWidth),tempP.X,tempP.Y,ww,hh);
 						break;
+					case "Draw.ArcShape":
+						r = (int)Math.Pow(Math.Pow(((BaseShape)currentShapes[i]).getP2().X -((BaseShape)currentShapes[i]).getP1().X, 2) + Math.Pow(((BaseShape)currentShapes[i]).getP2().Y -((BaseShape)currentShapes[i]).getP1().Y, 2), 0.5);
+						g.DrawArc(new Pen(((BaseShape)currentShapes[i]).penColor,((BaseShape)currentShapes[i]).penWidth), ((BaseShape)currentShapes[i]).getP1().X,((BaseShape)currentShapes[i]).getP1().Y, 100, r, 30, 120);
+						break;
 				}
 				((BaseShape)currentShapes[i]).superDraw(g);
 			}
@@ -390,6 +394,17 @@ namespace Draw
 		}
 
 		private void btnArc_Click(object sender, EventArgs e)
+		{
+			BaseTool setTool = (BaseTool)new ArcTool();      //加载现在要用的椭圆工具
+			if (setTool != null)
+			{
+				this.setCurrentTool(setTool);               //装载工具
+				setTool.setRefDRAWPanel(this);
+				picCurrentTool.Image = btnArc.Image;
+			}
+		}
+
+		private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
 		{
 
 		}

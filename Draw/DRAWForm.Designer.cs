@@ -35,7 +35,25 @@
 			this.btnSave = new System.Windows.Forms.ToolStripMenuItem();
 			this.btnExit = new System.Windows.Forms.ToolStripMenuItem();
 			this.工具TToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.椭圆ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.圆ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.直线ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.撤销ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.重做ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.矩形ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.抓取ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.清空面板ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.圆弧ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.颜色CToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.cyanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.redToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.blackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.magenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.greenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.orangeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.yellowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.blueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.moreColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.帮助HToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
@@ -76,24 +94,6 @@
 			this.RightToolStripPanel = new System.Windows.Forms.ToolStripPanel();
 			this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
 			this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
-			this.椭圆ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.圆ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.直线ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.撤销ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.重做ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.矩形ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.抓取ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.清空面板ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.圆弧ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.cyanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.redToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.blackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.magenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.greenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.orangeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.yellowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.blueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.moreColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
 			this.toolStripContainer1.ContentPanel.SuspendLayout();
@@ -122,6 +122,7 @@
 			this.menuStrip1.Size = new System.Drawing.Size(821, 25);
 			this.menuStrip1.TabIndex = 0;
 			this.menuStrip1.Text = "menuStrip1";
+			this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
 			// 
 			// 文件FToolStripMenuItem
 			// 
@@ -136,21 +137,21 @@
 			// btnOpen
 			// 
 			this.btnOpen.Name = "btnOpen";
-			this.btnOpen.Size = new System.Drawing.Size(152, 22);
+			this.btnOpen.Size = new System.Drawing.Size(100, 22);
 			this.btnOpen.Text = "打开";
 			this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
 			// 
 			// btnSave
 			// 
 			this.btnSave.Name = "btnSave";
-			this.btnSave.Size = new System.Drawing.Size(152, 22);
+			this.btnSave.Size = new System.Drawing.Size(100, 22);
 			this.btnSave.Text = "保存";
 			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
 			// 
 			// btnExit
 			// 
 			this.btnExit.Name = "btnExit";
-			this.btnExit.Size = new System.Drawing.Size(152, 22);
+			this.btnExit.Size = new System.Drawing.Size(100, 22);
 			this.btnExit.Text = "退出";
 			this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
 			// 
@@ -170,6 +171,69 @@
 			this.工具TToolStripMenuItem.Size = new System.Drawing.Size(59, 21);
 			this.工具TToolStripMenuItem.Text = "工具(&T)";
 			// 
+			// 椭圆ToolStripMenuItem
+			// 
+			this.椭圆ToolStripMenuItem.Name = "椭圆ToolStripMenuItem";
+			this.椭圆ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+			this.椭圆ToolStripMenuItem.Text = "椭圆";
+			this.椭圆ToolStripMenuItem.Click += new System.EventHandler(this.btnEllipse_Click);
+			// 
+			// 圆ToolStripMenuItem
+			// 
+			this.圆ToolStripMenuItem.Name = "圆ToolStripMenuItem";
+			this.圆ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+			this.圆ToolStripMenuItem.Text = "圆";
+			this.圆ToolStripMenuItem.Click += new System.EventHandler(this.btnCircle_Click);
+			// 
+			// 直线ToolStripMenuItem
+			// 
+			this.直线ToolStripMenuItem.Name = "直线ToolStripMenuItem";
+			this.直线ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+			this.直线ToolStripMenuItem.Text = "直线";
+			this.直线ToolStripMenuItem.Click += new System.EventHandler(this.btnLine_Click);
+			// 
+			// 撤销ToolStripMenuItem
+			// 
+			this.撤销ToolStripMenuItem.Name = "撤销ToolStripMenuItem";
+			this.撤销ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+			this.撤销ToolStripMenuItem.Text = "撤销";
+			this.撤销ToolStripMenuItem.Click += new System.EventHandler(this.btnUndo_Click);
+			// 
+			// 重做ToolStripMenuItem
+			// 
+			this.重做ToolStripMenuItem.Name = "重做ToolStripMenuItem";
+			this.重做ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+			this.重做ToolStripMenuItem.Text = "重做";
+			this.重做ToolStripMenuItem.Click += new System.EventHandler(this.btnRedo_Click);
+			// 
+			// 矩形ToolStripMenuItem
+			// 
+			this.矩形ToolStripMenuItem.Name = "矩形ToolStripMenuItem";
+			this.矩形ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+			this.矩形ToolStripMenuItem.Text = "矩形";
+			this.矩形ToolStripMenuItem.Click += new System.EventHandler(this.btnRectangle_Click);
+			// 
+			// 抓取ToolStripMenuItem
+			// 
+			this.抓取ToolStripMenuItem.Name = "抓取ToolStripMenuItem";
+			this.抓取ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+			this.抓取ToolStripMenuItem.Text = "抓取";
+			this.抓取ToolStripMenuItem.Click += new System.EventHandler(this.btnHand_Click);
+			// 
+			// 清空面板ToolStripMenuItem
+			// 
+			this.清空面板ToolStripMenuItem.Name = "清空面板ToolStripMenuItem";
+			this.清空面板ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+			this.清空面板ToolStripMenuItem.Text = "清空面板";
+			this.清空面板ToolStripMenuItem.Click += new System.EventHandler(this.btnClear_Click);
+			// 
+			// 圆弧ToolStripMenuItem
+			// 
+			this.圆弧ToolStripMenuItem.Name = "圆弧ToolStripMenuItem";
+			this.圆弧ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+			this.圆弧ToolStripMenuItem.Text = "圆弧";
+			this.圆弧ToolStripMenuItem.Click += new System.EventHandler(this.btnArc_Click);
+			// 
 			// 颜色CToolStripMenuItem
 			// 
 			this.颜色CToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -185,6 +249,69 @@
 			this.颜色CToolStripMenuItem.Name = "颜色CToolStripMenuItem";
 			this.颜色CToolStripMenuItem.Size = new System.Drawing.Size(60, 21);
 			this.颜色CToolStripMenuItem.Text = "颜色(&C)";
+			// 
+			// cyanToolStripMenuItem
+			// 
+			this.cyanToolStripMenuItem.Name = "cyanToolStripMenuItem";
+			this.cyanToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+			this.cyanToolStripMenuItem.Text = "Cyan";
+			this.cyanToolStripMenuItem.Click += new System.EventHandler(this.Cyan_Click);
+			// 
+			// redToolStripMenuItem
+			// 
+			this.redToolStripMenuItem.Name = "redToolStripMenuItem";
+			this.redToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+			this.redToolStripMenuItem.Text = "Red";
+			this.redToolStripMenuItem.Click += new System.EventHandler(this.Red_Click);
+			// 
+			// blackToolStripMenuItem
+			// 
+			this.blackToolStripMenuItem.Name = "blackToolStripMenuItem";
+			this.blackToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+			this.blackToolStripMenuItem.Text = "Black";
+			this.blackToolStripMenuItem.Click += new System.EventHandler(this.Black_Click);
+			// 
+			// magenteToolStripMenuItem
+			// 
+			this.magenteToolStripMenuItem.Name = "magenteToolStripMenuItem";
+			this.magenteToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+			this.magenteToolStripMenuItem.Text = "Magente";
+			this.magenteToolStripMenuItem.Click += new System.EventHandler(this.Magente_Click);
+			// 
+			// greenToolStripMenuItem
+			// 
+			this.greenToolStripMenuItem.Name = "greenToolStripMenuItem";
+			this.greenToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+			this.greenToolStripMenuItem.Text = "Green";
+			this.greenToolStripMenuItem.Click += new System.EventHandler(this.Green_Click);
+			// 
+			// orangeToolStripMenuItem
+			// 
+			this.orangeToolStripMenuItem.Name = "orangeToolStripMenuItem";
+			this.orangeToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+			this.orangeToolStripMenuItem.Text = "Orange";
+			this.orangeToolStripMenuItem.Click += new System.EventHandler(this.Orange_Click);
+			// 
+			// yellowToolStripMenuItem
+			// 
+			this.yellowToolStripMenuItem.Name = "yellowToolStripMenuItem";
+			this.yellowToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+			this.yellowToolStripMenuItem.Text = "Yellow";
+			this.yellowToolStripMenuItem.Click += new System.EventHandler(this.Yellow_Click);
+			// 
+			// blueToolStripMenuItem
+			// 
+			this.blueToolStripMenuItem.Name = "blueToolStripMenuItem";
+			this.blueToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+			this.blueToolStripMenuItem.Text = "Blue";
+			this.blueToolStripMenuItem.Click += new System.EventHandler(this.Blue_Click);
+			// 
+			// moreColorToolStripMenuItem
+			// 
+			this.moreColorToolStripMenuItem.Name = "moreColorToolStripMenuItem";
+			this.moreColorToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+			this.moreColorToolStripMenuItem.Text = "MoreColor";
+			this.moreColorToolStripMenuItem.Click += new System.EventHandler(this.btnMoreColor_Click);
 			// 
 			// 帮助HToolStripMenuItem
 			// 
@@ -219,7 +346,7 @@
 			// toolStripContainer1.ContentPanel
 			// 
 			this.toolStripContainer1.ContentPanel.Controls.Add(this.pictureBox1);
-			this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(821, 474);
+			this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(821, 449);
 			this.toolStripContainer1.ContentPanel.Load += new System.EventHandler(this.toolStripContainer1_ContentPanel_Load);
 			this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.toolStripContainer1.Location = new System.Drawing.Point(0, 25);
@@ -234,7 +361,7 @@
 			this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.pictureBox1.Location = new System.Drawing.Point(0, 0);
 			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(821, 474);
+			this.pictureBox1.Size = new System.Drawing.Size(821, 449);
 			this.pictureBox1.TabIndex = 0;
 			this.pictureBox1.TabStop = false;
 			this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
@@ -250,7 +377,7 @@
 			this.toolStripContainer2.ContentPanel.Controls.Add(this.groupBox2);
 			this.toolStripContainer2.ContentPanel.Controls.Add(this.groupBox1);
 			this.toolStripContainer2.ContentPanel.Controls.Add(this.groupBox3);
-			this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(161, 474);
+			this.toolStripContainer2.ContentPanel.Size = new System.Drawing.Size(161, 449);
 			this.toolStripContainer2.Dock = System.Windows.Forms.DockStyle.Right;
 			this.toolStripContainer2.Location = new System.Drawing.Point(660, 25);
 			this.toolStripContainer2.Name = "toolStripContainer2";
@@ -591,132 +718,6 @@
 			// ContentPanel
 			// 
 			this.ContentPanel.Size = new System.Drawing.Size(150, 150);
-			// 
-			// 椭圆ToolStripMenuItem
-			// 
-			this.椭圆ToolStripMenuItem.Name = "椭圆ToolStripMenuItem";
-			this.椭圆ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.椭圆ToolStripMenuItem.Text = "椭圆";
-			this.椭圆ToolStripMenuItem.Click += new System.EventHandler(this.btnEllipse_Click);
-			// 
-			// 圆ToolStripMenuItem
-			// 
-			this.圆ToolStripMenuItem.Name = "圆ToolStripMenuItem";
-			this.圆ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.圆ToolStripMenuItem.Text = "圆";
-			this.圆ToolStripMenuItem.Click += new System.EventHandler(this.btnCircle_Click);
-			// 
-			// 直线ToolStripMenuItem
-			// 
-			this.直线ToolStripMenuItem.Name = "直线ToolStripMenuItem";
-			this.直线ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.直线ToolStripMenuItem.Text = "直线";
-			this.直线ToolStripMenuItem.Click += new System.EventHandler(this.btnLine_Click);
-			// 
-			// 撤销ToolStripMenuItem
-			// 
-			this.撤销ToolStripMenuItem.Name = "撤销ToolStripMenuItem";
-			this.撤销ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.撤销ToolStripMenuItem.Text = "撤销";
-			this.撤销ToolStripMenuItem.Click += new System.EventHandler(this.btnUndo_Click);
-			// 
-			// 重做ToolStripMenuItem
-			// 
-			this.重做ToolStripMenuItem.Name = "重做ToolStripMenuItem";
-			this.重做ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.重做ToolStripMenuItem.Text = "重做";
-			this.重做ToolStripMenuItem.Click += new System.EventHandler(this.btnRedo_Click);
-			// 
-			// 矩形ToolStripMenuItem
-			// 
-			this.矩形ToolStripMenuItem.Name = "矩形ToolStripMenuItem";
-			this.矩形ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.矩形ToolStripMenuItem.Text = "矩形";
-			this.矩形ToolStripMenuItem.Click += new System.EventHandler(this.btnRectangle_Click);
-			// 
-			// 抓取ToolStripMenuItem
-			// 
-			this.抓取ToolStripMenuItem.Name = "抓取ToolStripMenuItem";
-			this.抓取ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.抓取ToolStripMenuItem.Text = "抓取";
-			this.抓取ToolStripMenuItem.Click += new System.EventHandler(this.btnHand_Click);
-			// 
-			// 清空面板ToolStripMenuItem
-			// 
-			this.清空面板ToolStripMenuItem.Name = "清空面板ToolStripMenuItem";
-			this.清空面板ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.清空面板ToolStripMenuItem.Text = "清空面板";
-			this.清空面板ToolStripMenuItem.Click += new System.EventHandler(this.btnClear_Click);
-			// 
-			// 圆弧ToolStripMenuItem
-			// 
-			this.圆弧ToolStripMenuItem.Name = "圆弧ToolStripMenuItem";
-			this.圆弧ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.圆弧ToolStripMenuItem.Text = "圆弧";
-			this.圆弧ToolStripMenuItem.Click += new System.EventHandler(this.btnArc_Click);
-			// 
-			// cyanToolStripMenuItem
-			// 
-			this.cyanToolStripMenuItem.Name = "cyanToolStripMenuItem";
-			this.cyanToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.cyanToolStripMenuItem.Text = "Cyan";
-			this.cyanToolStripMenuItem.Click += new System.EventHandler(this.Cyan_Click);
-			// 
-			// redToolStripMenuItem
-			// 
-			this.redToolStripMenuItem.Name = "redToolStripMenuItem";
-			this.redToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.redToolStripMenuItem.Text = "Red";
-			this.redToolStripMenuItem.Click += new System.EventHandler(this.Red_Click);
-			// 
-			// blackToolStripMenuItem
-			// 
-			this.blackToolStripMenuItem.Name = "blackToolStripMenuItem";
-			this.blackToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.blackToolStripMenuItem.Text = "Black";
-			this.blackToolStripMenuItem.Click += new System.EventHandler(this.Black_Click);
-			// 
-			// magenteToolStripMenuItem
-			// 
-			this.magenteToolStripMenuItem.Name = "magenteToolStripMenuItem";
-			this.magenteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.magenteToolStripMenuItem.Text = "Magente";
-			this.magenteToolStripMenuItem.Click += new System.EventHandler(this.Magente_Click);
-			// 
-			// greenToolStripMenuItem
-			// 
-			this.greenToolStripMenuItem.Name = "greenToolStripMenuItem";
-			this.greenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.greenToolStripMenuItem.Text = "Green";
-			this.greenToolStripMenuItem.Click += new System.EventHandler(this.Green_Click);
-			// 
-			// orangeToolStripMenuItem
-			// 
-			this.orangeToolStripMenuItem.Name = "orangeToolStripMenuItem";
-			this.orangeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.orangeToolStripMenuItem.Text = "Orange";
-			this.orangeToolStripMenuItem.Click += new System.EventHandler(this.Orange_Click);
-			// 
-			// yellowToolStripMenuItem
-			// 
-			this.yellowToolStripMenuItem.Name = "yellowToolStripMenuItem";
-			this.yellowToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.yellowToolStripMenuItem.Text = "Yellow";
-			this.yellowToolStripMenuItem.Click += new System.EventHandler(this.Yellow_Click);
-			// 
-			// blueToolStripMenuItem
-			// 
-			this.blueToolStripMenuItem.Name = "blueToolStripMenuItem";
-			this.blueToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.blueToolStripMenuItem.Text = "Blue";
-			this.blueToolStripMenuItem.Click += new System.EventHandler(this.Blue_Click);
-			// 
-			// moreColorToolStripMenuItem
-			// 
-			this.moreColorToolStripMenuItem.Name = "moreColorToolStripMenuItem";
-			this.moreColorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-			this.moreColorToolStripMenuItem.Text = "MoreColor";
-			this.moreColorToolStripMenuItem.Click += new System.EventHandler(this.btnMoreColor_Click);
 			// 
 			// DRAWForm
 			// 
